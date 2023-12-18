@@ -18,7 +18,7 @@ Pipeline{
 				sh 'mvn clean package'
 			}
 		}
-		stage(Deployment'){
+		stage('Deployment'){
 			steps{
 				deploy adapters:[tomcat9(url:'http://54.224.84.152:8080/',credentialsld:deployer')],war:'target/*.war'
 			}
