@@ -2,7 +2,7 @@ Pipeline{
 	agent any
 	tools{
 		maven 'maven3.9'
-		jdk'OpenJDK8'
+		
 	}
 	stages {
 		stage('checkoutcode'){
