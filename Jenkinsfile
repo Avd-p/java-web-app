@@ -7,7 +7,7 @@ pipeline{
         stage("Checkout Code"){
             steps{
                 echo "Code checkout started"
-                git branch: 'main', url: 'https://github.com/DevOpsProject-sam/java-web-app.git'
+                git branch: 'main', url: 'https://github.com/Avd-p/java-web-app.git'
 
                 echo "Code checkout completed"
             }
