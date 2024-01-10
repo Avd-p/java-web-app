@@ -21,6 +21,19 @@ pipeline{
 
             }
         }
+   stage('SonarQube analysis') {
+            environment {
+                scannerHome = tool 'sonar-scanner-meportal'
+            }
+            steps{
+                withSonarQubeEnv('sonar-server-meportal') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
+            }
+        }
+
+
+        
         stage("Deployment"){
             steps{
                 deploy adapters: [tomcat9(url: 'http://54.224.84.152:8080/', credentialsId:'deployer')] , war:'target/*.war'
